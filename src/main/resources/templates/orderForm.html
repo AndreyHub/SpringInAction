@@ -22,37 +22,63 @@
 		</ul>
 		
 		<h3>Доставить мое тако в...</h3>
-		<label for="deliveryName">Имя доставки:</label>
+		<label for="deliveryName">Имя доставки:</label>		
 		<input type="text" th:field="*{deliveryName}"/>
+		<span class="validationError"
+			th:if="@{#fields.hasError}"
+			th:errors="*{deliveryName}">deliveryName Error</span>
 		<br/>
 				
 		<label for="deliveryStreet">Доставка на улицу:</label>
 		<input type="text" th:field="*{deliveryStreet}"/>
+		<span class="validationError"
+			th:if="@{#fields.hasError}"
+			th:errors="*{deliveryStreet}">deliveryStreet</span>
+		
 		<br/>
 		
 		<label for="deliveryCity">Доставка в город:</label>
 		<input type="text" th:field="*{deliveryCity}"/>
+		<span class="validationError"
+			th:if="@{#fields.hasError}"
+			th:errors="*{deliveryCity}">deliveryCity</span>
 		<br/>
 		
 		<label for="deliveryState">Доставка в край/область:</label>
 		<input type="text" th:field="*{deliveryState}"/>
+		<span class="validationError"
+			th:if="@{#fields.hasError}"
+			th:errors="*{deliveryState}">deliveryState</span>
 		<br/>
 		
 		<label for="deliveryZip">Индекс:</label>
 		<input type="text" th:field="*{deliveryZip}"/>
+		<span class="validationError"
+			th:if="@{#fields.hasError}"
+			th:errors="*{deliveryZip}">deliveryZip</span>
 		<br/>
 		
 		<h3>Способ оплаты...</h3>
 		<label for="ccNumber">Кредитная карта№:</label>
 		<input type="text" th:field="*{ccNumber}"/>
+		<span class="validationError"
+			th:if="@{#fields.hasError}"
+			th:errors="*{ccNumber}">CC Num Error</span>
 		<br/>
 		
 		<label for="ccExpiration">Срок действия:</label>
 		<input type="text" th:field="*{ccExpiration}"/>
+		<span class="validationError"
+			th:if="@{#fields.hasError}"
+			th:errors="*{ccExpiration}">ccExpiration</span>
+		
 		<br/>
 		
 		<label for="ccCW">Код CVV:</label>
 		<input type="text" th:field="*{ccCW}"/>
+		<span class="validationError"
+			th:if="@{#fields.hasError}"
+			th:errors="*{ccCW}">ccCW</span>
 		<br/>
 		
 		<input type="submit" value="Утвердить заказ"/>
